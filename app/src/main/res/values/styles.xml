@@ -25,4 +25,8 @@
         <item name="android:textColor">@color/primary_font</item>
         <item name="android:textColorHint">@color/secondary_font</item>
     </style>
+    <style name="btnPrimary">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btnshape</item>
+    </style>
 </resources>

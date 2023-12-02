@@ -17,9 +17,10 @@ class MyApp : Application() {
                 Usuario(
                     usuarios.size + 1,
                     "root",
-                    "Administrador Global",
                     "Administrador",
-                    "root@admin.com"
+                    "Administrador Global",
+                    "root@admin.com",
+                    "root"
                 )
             )
         }
