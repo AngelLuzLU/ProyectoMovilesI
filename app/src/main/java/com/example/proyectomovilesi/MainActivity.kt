@@ -1,5 +1,6 @@
 package com.example.proyectomovilesi
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -31,5 +32,14 @@ class MainActivity : AppCompatActivity() {
         )
         //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        val currentUser = Storage.getCurrentUser()
+        if(currentUser != null){
+            binding.emailMain.text = currentUser.email
+            binding.rolMain.text = currentUser.rol
+        }
+        binding.btnLogout.setOnClickListener {
+            Storage.logOut(this)
+            startActivity(Intent(this, Login::class.java))
+        }
     }
 }

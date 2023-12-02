@@ -66,31 +66,36 @@ class Storage private constructor(context: Context) {
 
         // Métodos para acceder a las listas de manera estática
         fun getUsuarios(): ArrayList<Usuario> {
-            return usuarios ?: ArrayList()
+            return usuarios!!
         }
 
         fun getSitios(): ArrayList<Sitio> {
-            return sitios ?: ArrayList()
+            return sitios!!
         }
 
         fun getPinturas(): ArrayList<Pintura> {
-            return pinturas ?: ArrayList()
+            return pinturas!!
         }
 
         fun getFosiles(): ArrayList<Fosil> {
-            return fosiles ?: ArrayList()
+            return fosiles!!
         }
 
         fun getEsculturas(): ArrayList<Escultura> {
-            return esculturas ?: ArrayList()
+            return esculturas!!
         }
 
         fun getCurrentUser(): Usuario?{
             return currentUser
         }
 
-        fun logOut(){
+        fun setCurrentUser(usuario: Usuario, context: Context){
+            currentUser = usuario
+            saveToSharedPreferences(context)
+        }
+        fun logOut(context: Context){
             currentUser = null
+            saveToSharedPreferences(context)
         }
     }
 }

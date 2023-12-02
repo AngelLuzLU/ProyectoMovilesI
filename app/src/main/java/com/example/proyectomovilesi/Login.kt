@@ -36,6 +36,7 @@ class Login : AppCompatActivity() {
                 Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            Storage.setCurrentUser(user, this)
             startActivity(Intent(this, MainActivity::class.java))
         }
 
