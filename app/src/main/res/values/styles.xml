@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="titleText">
+        <item name="android:textColor">@color/primary_font</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="mainLayout">
+        <item name="android:layout_margin">@dimen/activity_horizontal_margin</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+    <style name="roundedSquare">
+        <item name="cornerSize">20%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+    <style name="circular">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+    <style name="textField">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/textfieldstyle</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/primary_font</item>
+        <item name="android:textColorHint">@color/secondary_font</item>
+    </style>
+</resources>

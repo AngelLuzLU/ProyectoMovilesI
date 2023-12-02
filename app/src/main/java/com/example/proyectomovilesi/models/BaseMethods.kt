@@ -2,6 +2,6 @@ package com.example.proyectomovilesi.models
 
 import android.content.Intent
 
-interface clase {
+interface BaseMethods {
     fun putToIntent(intent: Intent)
 }
