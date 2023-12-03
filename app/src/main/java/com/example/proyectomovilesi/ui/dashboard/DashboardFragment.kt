@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectomovilesi.FormularioSitio
 import com.example.proyectomovilesi.R
+import com.example.proyectomovilesi.SitioDetalles
 import com.example.proyectomovilesi.Storage
 import com.example.proyectomovilesi.adapters.ArticuloAdapter
 import com.example.proyectomovilesi.adapters.SitioAdapter
@@ -108,7 +109,9 @@ class DashboardFragment : Fragment() {
     private fun setRecyclerOnClickListener(adapter: SitioAdapter) {
         adapter.setOnClickListener(object : SitioAdapter.OnClickListener {
             override fun onClick(position: Int, model: Sitio) {
-                Toast.makeText(requireContext(), model.nombre, Toast.LENGTH_SHORT).show()
+                val inte = Intent(requireContext(), SitioDetalles::class.java)
+                model.putToIntent(inte)
+                startActivity(inte)
             }
         })
     }

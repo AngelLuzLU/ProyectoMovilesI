@@ -8,7 +8,7 @@ class Sitio(
     var id: Int,
     var nombre: String,
     var esPublico: Boolean,
-    var articulos: ArrayList<Articulo>,
+    var articulos: ArrayList<Articulo>?,
     var nombreExposicion: String
 ) : BaseMethods, Serializable {
 

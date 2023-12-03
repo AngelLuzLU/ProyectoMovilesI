@@ -117,20 +117,19 @@ class ArticuloDetalles : AppCompatActivity() {
                 val fosiles = Storage.getFosiles()
                 val index = fosiles.indexOfFirst { e -> e.id == art.id }
                 fosiles.removeAt(index)
-                finish()
             }
             if(art is Escultura){
                 val esculturas = Storage.getEsculturas()
                 val index = esculturas.indexOfFirst { e -> e.id == art.id }
                 esculturas.removeAt(index)
-                finish()
             }
             if(art is Pintura){
                 val pinturas = Storage.getPinturas()
                 val index = pinturas.indexOfFirst { e -> e.id == art.id }
                 pinturas.removeAt(index)
-                finish()
             }
+            Storage.saveToSharedPreferences(this)
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
     fun assignBaseValues(art: Articulo){
