@@ -51,6 +51,8 @@ class NotificationsFragment : Fragment() {
         usuarios.addAll(users)
         usuarios.sortBy { it.id }
         addBtn = binding.btnAddUser
+        val currentUser = Storage.getCurrentUser()
+        if(currentUser?.rol != "Administrador") addBtn.visibility = View.GONE
         searchBtn = binding.btnSearchUser
         search = binding.searchUser
         recycler = binding.userRecycler

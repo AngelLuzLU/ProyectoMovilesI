@@ -35,6 +35,7 @@ class Pintura(
 
     override fun putToIntent(intent: Intent) {
         super.putToIntent(intent)
+        intent.putExtra("tipo", 2)
         intent.putExtra("autor", autor)
         intent.putExtra("tipoPintura", tipoPintura)
         intent.putExtra("corrienteArtistica", corrienteArtistica)

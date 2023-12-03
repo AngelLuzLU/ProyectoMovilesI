@@ -27,7 +27,7 @@ class UsuarioAdapter(private val context: Context, private val usuarios: List<Us
 
         holder.userListName.text = "Nombre: ${usuario.nombre}"
         holder.userListEmail.text = "Email: ${usuario.email}"
-        holder.userListId.text = "Id: ${usuario.id.toString()}"
+        holder.userListId.text = "Id: ${usuario.id}"
         holder.itemView.setOnClickListener {
             if (onClickListener != null) {
                 onClickListener!!.onClick(position, usuario)

@@ -39,7 +39,7 @@ class ArticuloAdapter(private val context: Context, private val articulos: List<
         holder.articleListName.text = "Nombre: ${articulo.nombre}"
         holder.articleListSite.text = "Sitio: n/a"
         if(sitio != null) holder.articleListSite.text = "Sitio: ${sitio.nombre}"
-        holder.articleListId.text = "Id: ${articulo.id.toString()}"
+        holder.articleListId.text = "Id: ${articulo.id}"
         holder.itemView.setOnClickListener {
             if (onClickListener != null) {
                 onClickListener!!.onClick(position, articulo)

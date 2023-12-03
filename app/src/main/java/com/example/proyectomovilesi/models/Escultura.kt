@@ -35,6 +35,7 @@ class Escultura(
 
     override fun putToIntent(intent: Intent) {
         super.putToIntent(intent)
+        intent.putExtra("tipo", 1)
         intent.putExtra("altura", altura)
         intent.putExtra("ancho", ancho)
         intent.putExtra("peso", peso)

@@ -33,6 +33,7 @@ class Fosil(
 
     override fun putToIntent(intent: Intent) {
         super.putToIntent(intent)
+        intent.putExtra("tipo", 0)
         intent.putExtra("especie", especie)
         intent.putExtra("periodo", periodo)
         intent.putExtra("ubicacionDescubrimiento", ubicacionDescubrimiento)

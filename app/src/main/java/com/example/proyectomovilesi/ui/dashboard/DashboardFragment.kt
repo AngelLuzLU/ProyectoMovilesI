@@ -50,12 +50,13 @@ class DashboardFragment : Fragment() {
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         sitios = mutableListOf()
         sitios.addAll(sites)
         println(sitios.count())
         sitios.sortBy { it.id }
         addBtn = binding.btnAddSite
+        val currentUser = Storage.getCurrentUser()
+        if(currentUser?.rol != "Administrador") addBtn.visibility = View.GONE
         searchBtn = binding.btnSearchSite
         search = binding.searchSite
         recycler = binding.siteRecycler

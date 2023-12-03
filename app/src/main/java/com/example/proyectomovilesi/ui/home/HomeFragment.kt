@@ -1,5 +1,6 @@
 package com.example.proyectomovilesi.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,11 +14,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
+import com.example.proyectomovilesi.ArticuloDetalles
 import com.example.proyectomovilesi.R
 import com.example.proyectomovilesi.Storage
 import com.example.proyectomovilesi.adapters.ArticuloAdapter
 import com.example.proyectomovilesi.databinding.FragmentHomeBinding
 import com.example.proyectomovilesi.models.Articulo
+import com.example.proyectomovilesi.models.Escultura
+import com.example.proyectomovilesi.models.Fosil
+import com.example.proyectomovilesi.models.Pintura
 
 class HomeFragment : Fragment() {
 
@@ -54,6 +59,8 @@ class HomeFragment : Fragment() {
         articulos.addAll(fosiles)
         articulos.sortBy { it.id }
         addBtn = binding.btnAddArticle
+        val currentUser = Storage.getCurrentUser()
+        if(currentUser?.rol != "Administrador") addBtn.visibility = View.GONE
         searchBtn = binding.btnSearchArticle
         search = binding.searchArticle
         recycler = binding.articleRecycler
@@ -105,7 +112,20 @@ class HomeFragment : Fragment() {
     private fun setRecyclerOnClickListener(adapter: ArticuloAdapter) {
         adapter.setOnClickListener(object : ArticuloAdapter.OnClickListener {
             override fun onClick(position: Int, model: Articulo) {
-                Toast.makeText(requireContext(), model.nombre, Toast.LENGTH_SHORT).show()
+                val inte = Intent(requireContext(), ArticuloDetalles::class.java)
+                if(model is Fosil){
+                    val fosil: Fosil = model
+                    fosil.putToIntent(inte)
+                }
+                if(model is Pintura){
+                    val pintura: Pintura = model
+                    pintura.putToIntent(inte)
+                }
+                if(model is Escultura){
+                    val escultura: Escultura = model
+                    escultura.putToIntent(inte)
+                }
+                startActivity(inte)
             }
         })
     }

@@ -75,4 +75,79 @@
                 android:text="asdfasdfasdfasdfasdfjasndfkjasdfkjashdfjkasdkfjkajsdfkjahsdfkasd" />
         </LinearLayout>
     </LinearLayout>
+    <TextView
+        android:id="@+id/txtAtrr1"
+        style="@style/primaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtAtrr2"
+        style="@style/primaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtAtrr3"
+        style="@style/primaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtAtrr4"
+        style="@style/primaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtAtrr5"
+        style="@style/primaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtAtrr6"
+        style="@style/primaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="" />
+
+    <LinearLayout
+        android:id="@+id/articleActionsRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnEditarArticulo"
+            style="@style/btnPrimary"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_weight="1"
+            android:text="Editar" />
+
+        <ImageButton
+            android:id="@+id/btnEliminarArticulo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="Eliminar Articulo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/eliminar" />
+
+    </LinearLayout>
 </LinearLayout>
