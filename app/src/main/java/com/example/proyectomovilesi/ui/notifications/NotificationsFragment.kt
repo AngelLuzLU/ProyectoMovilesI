@@ -1,5 +1,6 @@
 package com.example.proyectomovilesi.ui.notifications
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyectomovilesi.FormularioUser
 import com.example.proyectomovilesi.R
 import com.example.proyectomovilesi.Storage
 import com.example.proyectomovilesi.adapters.SitioAdapter
@@ -95,7 +97,9 @@ class NotificationsFragment : Fragment() {
         }
 
         addBtn.setOnClickListener {
-            Toast.makeText(requireContext(), "Ir al formulario", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(requireContext(), "Ir al formulario", Toast.LENGTH_SHORT).show()
+            val intent = Intent(activity, FormularioUser::class.java)
+            activity?.startActivity(intent)
         }
 
         return root

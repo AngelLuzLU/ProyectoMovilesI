@@ -1,6 +1,7 @@
 package com.example.proyectomovilesi.models
 
 import android.content.Intent
+import com.example.proyectomovilesi.Storage
 import java.io.Serializable
 
 class Usuario(
@@ -11,6 +12,8 @@ class Usuario(
     var email: String,
     var contrasenia: String,
 ): BaseMethods, Serializable {
+
+
     constructor(intent: Intent) : this(
         intent.getIntExtra("id", 0),
         intent.getStringExtra("nombre") ?: "",
@@ -18,6 +21,15 @@ class Usuario(
         intent.getStringExtra("puesto") ?: "",
         intent.getStringExtra("email") ?: "",
         intent.getStringExtra("contrasenia") ?: "",
+    )
+
+    constructor(nombre: String, rol: String, puesto: String, email: String, contrasenia: String) : this(
+        Storage.getUsuarios().count() + 1,
+        nombre,
+        rol,
+        puesto,
+        email,
+        contrasenia
     )
 
     override fun putToIntent(intent: Intent) {
