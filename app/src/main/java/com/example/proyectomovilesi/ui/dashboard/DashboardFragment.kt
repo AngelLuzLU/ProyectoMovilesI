@@ -1,5 +1,6 @@
 package com.example.proyectomovilesi.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyectomovilesi.FormularioSitio
 import com.example.proyectomovilesi.R
 import com.example.proyectomovilesi.Storage
 import com.example.proyectomovilesi.adapters.ArticuloAdapter
@@ -23,6 +25,7 @@ import com.example.proyectomovilesi.models.Sitio
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
+    private val sitio: Sitio? = null
 
     private lateinit var addBtn: Button
     private lateinit var searchBtn: ImageButton
@@ -94,7 +97,7 @@ class DashboardFragment : Fragment() {
         }
 
         addBtn.setOnClickListener {
-            Toast.makeText(requireContext(), "Ir al formulario", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(requireContext(), FormularioSitio::class.java))
         }
 
         return root

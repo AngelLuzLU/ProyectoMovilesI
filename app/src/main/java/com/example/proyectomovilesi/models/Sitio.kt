@@ -1,6 +1,7 @@
 package com.example.proyectomovilesi.models
 
 import android.content.Intent
+import com.example.proyectomovilesi.Storage
 import java.io.Serializable
 
 class Sitio(
@@ -17,6 +18,11 @@ class Sitio(
         intent.getBooleanExtra("esPublico", false),
         intent.getSerializableExtra("articulos") as ArrayList<Articulo>,
         intent.getStringExtra("nombreExposicion") ?: ""
+    )
+
+    constructor(nombre: String, esPublico: Boolean, nombreExposicion: String) : this(
+        Storage.getSitios().count() + 1,
+        nombre, esPublico, arrayListOf(), nombreExposicion
     )
 
     override fun putToIntent(intent: Intent) {
