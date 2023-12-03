@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ProyectoMovilesI"
         tools:targetApi="31">
         <activity
+            android:name=".ArticuloDetalles"
+            android:exported="false" />
+        <activity
             android:name=".SitioDetalles"
             android:exported="false" />
         <activity
@@ -28,10 +31,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".FormularioSitio"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

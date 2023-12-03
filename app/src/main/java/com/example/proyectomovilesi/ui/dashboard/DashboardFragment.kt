@@ -53,6 +53,7 @@ class DashboardFragment : Fragment() {
 
         sitios = mutableListOf()
         sitios.addAll(sites)
+        println(sitios.count())
         sitios.sortBy { it.id }
         addBtn = binding.btnAddSite
         searchBtn = binding.btnSearchSite

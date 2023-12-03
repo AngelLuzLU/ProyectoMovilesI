@@ -19,8 +19,6 @@ class FormularioSitio : AppCompatActivity() {
         val nombre = findViewById<EditText>(R.id.editTextNomJ)
         val radioSi = findViewById<RadioButton>(R.id.radioButtonSJ)
         val registrar = findViewById<Button>(R.id.buttonRegistrarJ)
-        val actualizar = findViewById<Button>(R.id.buttonActualizarJ)
-        val regresar = findViewById<Button>(R.id.buttonRegresarJ)
 
         registrar.setOnClickListener(){
             var expo = exposicion.text.toString()
@@ -32,12 +30,5 @@ class FormularioSitio : AppCompatActivity() {
             finish()
         }
 
-        actualizar.setOnClickListener(){
-
-        }
-
-        regresar.setOnClickListener(){
-            startActivity(Intent(this, MainActivity::class.java))
-        }
     }
 }

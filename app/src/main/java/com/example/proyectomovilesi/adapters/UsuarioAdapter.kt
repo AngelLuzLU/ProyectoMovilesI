@@ -25,9 +25,9 @@ class UsuarioAdapter(private val context: Context, private val usuarios: List<Us
 
         holder.imagenUserList.setImageResource(R.drawable.defaultusergrey)
 
-        holder.userListName.text = usuario.nombre
-        holder.userListEmail.text = usuario.email
-        holder.userListId.text = usuario.id.toString()
+        holder.userListName.text = "Nombre: ${usuario.nombre}"
+        holder.userListEmail.text = "Email: ${usuario.email}"
+        holder.userListId.text = "Id: ${usuario.id.toString()}"
         holder.itemView.setOnClickListener {
             if (onClickListener != null) {
                 onClickListener!!.onClick(position, usuario)

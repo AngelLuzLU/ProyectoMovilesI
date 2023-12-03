@@ -53,8 +53,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/siteRecycler"
         android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        tools:layout_weight="1" />
+        android:layout_weight="1" />
 
 </LinearLayout>

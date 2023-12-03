@@ -37,9 +37,9 @@ class SitioAdapter(private val context: Context, private val sitios: List<Sitio>
         }
         holder.siteListImage.setImageResource(imgId)
 
-        holder.siteListName.text = sitio.nombre
-        holder.siteListExhibition.text = sitio.nombreExposicion
-        holder.siteListId.text = sitio.id.toString()
+        holder.siteListName.text = "Nombre: ${sitio.nombre}"
+        holder.siteListExhibition.text = "Exposición: ${sitio.nombreExposicion}"
+        holder.siteListId.text = "ID: ${sitio.id.toString()}"
         holder.itemView.setOnClickListener {
             if (onClickListener != null) {
                 onClickListener!!.onClick(position, sitio )
