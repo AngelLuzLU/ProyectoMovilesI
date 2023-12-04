@@ -27,8 +27,8 @@ class SitioAdapter(private val context: Context, private val sitios: List<Sitio>
         val sitio = sitios[position]
         var images = listOf(R.drawable.ex_paint, R.drawable.ex_sculp, R.drawable.dinosaur)
         var imgId = 0
-        if(sitio.articulos.isNotEmpty()){
-            val first = sitio.articulos.first()
+        if(sitio.articulos != null && sitio.articulos!!.isNotEmpty()){
+            val first = sitio.articulos!!.first()
             if(first is Fosil) imgId = R.drawable.dinosaur
             if(first is Pintura) imgId = R.drawable.ex_paint
             if(first is Escultura) imgId = R.drawable.ex_sculp

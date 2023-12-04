@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.example.proyectomovilesi.models.Escultura
 import com.example.proyectomovilesi.models.Fosil
 import com.example.proyectomovilesi.models.Pintura
@@ -62,6 +63,10 @@ class SitioDetalles : AppCompatActivity() {
             startActivity(inte)
         }
         eliminar.setOnClickListener(){
+            if((sitio.articulos?.count() ?: 0) != 0) {
+                Toast.makeText(this, "No se puede eliminar un sito con artículos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             val sitios = Storage.getSitios()
             val index = sitios.indexOfFirst { e -> e.id == sitio.id }
             sitios.removeAt(index)

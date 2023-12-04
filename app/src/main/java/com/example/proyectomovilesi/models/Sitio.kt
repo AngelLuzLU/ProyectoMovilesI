@@ -16,7 +16,7 @@ class Sitio(
         intent.getIntExtra("id", 0),
         intent.getStringExtra("nombre") ?: "",
         intent.getBooleanExtra("esPublico", false),
-        intent.getSerializableExtra("articulos") as ArrayList<Articulo>,
+        intent.getSerializableExtra("articulos") as ArrayList<Articulo>?,
         intent.getStringExtra("nombreExposicion") ?: ""
     )
 

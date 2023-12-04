@@ -35,7 +35,7 @@ class ArticuloAdapter(private val context: Context, private val articulos: List<
             holder.imageArticleList.setImageResource(R.drawable.canvas)
         }
         val sitios = Storage.getSitios()
-        val sitio = sitios.find { e -> e.articulos.contains(articulo) }
+        val sitio = sitios.find { e -> e.articulos?.contains(articulo) ?: false }
         holder.articleListName.text = "Nombre: ${articulo.nombre}"
         holder.articleListSite.text = "Sitio: n/a"
         if(sitio != null) holder.articleListSite.text = "Sitio: ${sitio.nombre}"
