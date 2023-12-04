@@ -3,9 +3,17 @@
     <string name="title_home">Artículos</string>
     <string name="title_dashboard">Sitios</string>
     <string name="title_notifications">Usuarios</string>
+    <string name="regresar">REGRESAR</string>
     <string-array name="form_types">
         <item>Fosil</item>
         <item>Escultura</item>
         <item>Pintura</item>
+    </string-array>
+    <string-array name="fosil_types">
+        <item>Icnofósiles</item>
+        <item>Microfósiles</item>
+        <item>Resina fósil</item>
+        <item>Pseudofósil</item>
+        <item>Fósil viviente</item>
     </string-array>
 </resources>

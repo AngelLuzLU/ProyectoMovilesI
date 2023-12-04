@@ -1,15 +1,16 @@
 package com.example.proyectomovilesi
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.FrameLayout
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.proyectomovilesi.ui.formularioarticulos.EsculturaFormFragment
+import com.example.proyectomovilesi.ui.formularioarticulos.FosilFormFragment
+import com.example.proyectomovilesi.ui.formularioarticulos.PinturaFormFragment
 
 class FormularioArticulo : AppCompatActivity() {
 
@@ -17,7 +18,7 @@ class FormularioArticulo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_articulo)
 
-        val spinner: Spinner = findViewById(R.id.spinner)
+        val spinner: Spinner = findViewById(R.id.spinnerTipoFosil)
         val container: FrameLayout = findViewById(R.id.container)
 
         val adapter: ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(
@@ -43,7 +44,7 @@ class FormularioArticulo : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {
-                // No hacer nada en este caso
+                // No hacer nada
             }
         }
     }
@@ -52,35 +53,5 @@ class FormularioArticulo : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()
-    }
-
-    // Fragment para el formulario de Fosil
-    class FosilFormFragment : Fragment() {
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            return inflater.inflate(R.layout.fragment_fosil_form, container, false)
-        }
-    }
-
-    // Fragment para el formulario de Escultura
-    class EsculturaFormFragment : Fragment() {
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            return inflater.inflate(R.layout.fragment_escultura_form, container, false)
-        }
-    }
-
-    // Fragment para el formulario de Pintura
-    class PinturaFormFragment : Fragment() {
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            return inflater.inflate(R.layout.fragment_pintura_form, container, false)
-        }
     }
 }
