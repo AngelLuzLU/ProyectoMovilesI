@@ -16,4 +16,14 @@
         <item>Pseudofósil</item>
         <item>Fósil viviente</item>
     </string-array>
+    <string-array name="lienzos_types">
+        <item>Figura</item>
+        <item>Paisaje</item>
+        <item>Marina</item>
+    </string-array>
+    <string-array name="pinturas_types">
+        <item>Acrilica</item>
+        <item>Acuarela</item>
+        <item>Oleo</item>
+    </string-array>
 </resources>

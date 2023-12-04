@@ -47,13 +47,10 @@ class FormularioArticulo : AppCompatActivity() {
                         2 -> replaceFragment(PinturaFormFragment(null))
                     }
                 }
-
                 override fun onNothingSelected(parentView: AdapterView<*>?) {}
 
             }
         }
-
-
             if (tipo != 1100) {
                 spinner.isEnabled = false
                 when (tipo) {
