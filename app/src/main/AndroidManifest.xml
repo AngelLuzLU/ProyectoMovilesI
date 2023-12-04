@@ -41,6 +41,9 @@
         <activity
             android:name=".FormularioSitio"
             android:exported="false" />
+        <activity
+            android:name=".FormularioArticulo"
+            android:exported="false" />
     </application>
 
 </manifest>

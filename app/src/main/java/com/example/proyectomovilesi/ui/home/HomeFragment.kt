@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.proyectomovilesi.ArticuloDetalles
+import com.example.proyectomovilesi.FormularioArticulo
 import com.example.proyectomovilesi.R
 import com.example.proyectomovilesi.Storage
 import com.example.proyectomovilesi.adapters.ArticuloAdapter
@@ -108,6 +109,7 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), "Primero registra un sitio", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            startActivity(Intent(requireContext(), FormularioArticulo::class.java))
             Toast.makeText(requireContext(), "Ir al formulario", Toast.LENGTH_SHORT).show()
         }
 
