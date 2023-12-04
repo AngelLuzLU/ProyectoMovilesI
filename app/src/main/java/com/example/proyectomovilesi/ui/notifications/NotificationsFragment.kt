@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectomovilesi.FormularioUser
 import com.example.proyectomovilesi.R
 import com.example.proyectomovilesi.Storage
+import com.example.proyectomovilesi.UserDetalles
 import com.example.proyectomovilesi.adapters.SitioAdapter
 import com.example.proyectomovilesi.adapters.UsuarioAdapter
 import com.example.proyectomovilesi.databinding.FragmentNotificationsBinding
@@ -98,8 +99,8 @@ class NotificationsFragment : Fragment() {
 
         addBtn.setOnClickListener {
             //Toast.makeText(requireContext(), "Ir al formulario", Toast.LENGTH_SHORT).show()
-            val intent = Intent(activity, FormularioUser::class.java)
-            activity?.startActivity(intent)
+            val i = Intent(activity, FormularioUser::class.java)
+            activity?.startActivity(i)
         }
 
         return root
@@ -108,7 +109,10 @@ class NotificationsFragment : Fragment() {
     private fun setRecyclerOnClickListener(adapter: UsuarioAdapter) {
         adapter.setOnClickListener(object : UsuarioAdapter.OnClickListener {
             override fun onClick(position: Int, model: Usuario) {
-                Toast.makeText(requireContext(), model.nombre, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(requireContext(), model.nombre, Toast.LENGTH_SHORT).show()
+                val i = Intent(requireContext(), UserDetalles::class.java)
+                model.putToIntent(i)
+                startActivity(i)
             }
         })
     }
