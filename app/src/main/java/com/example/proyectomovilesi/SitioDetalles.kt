@@ -11,6 +11,10 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import com.example.proyectomovilesi.adapters.ArticuloAdapter
+import com.example.proyectomovilesi.adapters.SitioAdapter
+import com.example.proyectomovilesi.models.Articulo
 import com.example.proyectomovilesi.models.Escultura
 import com.example.proyectomovilesi.models.Fosil
 import com.example.proyectomovilesi.models.Pintura
@@ -31,6 +35,7 @@ class SitioDetalles : AppCompatActivity() {
         val editar = findViewById<Button>(R.id.buttonEditar)
         val eliminar = findViewById<ImageButton>(R.id.imageButtonEliminar)
         val acciones = findViewById<LinearLayout>(R.id.actionsSitioDetalles)
+        val recycler = findViewById<RecyclerView>(R.id.recyclerDetallesSitio)
         val currentUser = Storage.getCurrentUser()
 
         if (currentUser?.rol != "Administrador") acciones.visibility = View.GONE
@@ -40,31 +45,39 @@ class SitioDetalles : AppCompatActivity() {
         nombre.text = "Nombre: ${sitio.nombre}"
         expo.text = "Exposición: ${sitio.nombreExposicion}"
         publico.text = "Es privado"
+
+        if (sitio.articulos != null) {
+            var arts: ArrayList<Articulo> = sitio.articulos!!
+            val adapter = ArticuloAdapter(this, arts.toList())
+            recycler.adapter = adapter
+        }
+
         if (sitio.esPublico) publico.text = "Es público"
 
         var images = listOf(R.drawable.ex_paint, R.drawable.ex_sculp, R.drawable.dinosaur)
         var imgId = 0
-        if (sitio.articulos != null){
-            if(sitio.articulos!!.isNotEmpty()){
-                val first = sitio.articulos!!.first()
-                if(first is Fosil) imgId = R.drawable.dinosaur
-                if(first is Pintura) imgId = R.drawable.ex_paint
-                if(first is Escultura) imgId = R.drawable.ex_sculp
-            }
-        }
-        else{
+        if (sitio.articulos != null && sitio.articulos!!.isNotEmpty()) {
+            val first = sitio.articulos!!.first()
+            if (first is Fosil) imgId = R.drawable.dinosaur
+            if (first is Pintura) imgId = R.drawable.ex_paint
+            if (first is Escultura) imgId = R.drawable.ex_sculp
+        } else {
             imgId = images[Random.nextInt(0, images.count())]
         }
         img.setImageResource(imgId)
 
-        editar.setOnClickListener(){
+        editar.setOnClickListener {
             val inte = Intent(this, FormularioSitio::class.java)
             sitio.putToIntent(inte)
             startActivity(inte)
         }
-        eliminar.setOnClickListener(){
-            if((sitio.articulos?.count() ?: 0) != 0) {
-                Toast.makeText(this, "No se puede eliminar un sito con artículos", Toast.LENGTH_SHORT).show()
+        eliminar.setOnClickListener {
+            if ((sitio.articulos?.count() ?: 0) != 0) {
+                Toast.makeText(
+                    this,
+                    "No se puede eliminar un sito con artículos",
+                    Toast.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
             val sitios = Storage.getSitios()

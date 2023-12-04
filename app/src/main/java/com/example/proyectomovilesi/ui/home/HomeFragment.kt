@@ -103,6 +103,11 @@ class HomeFragment : Fragment() {
         }
 
         addBtn.setOnClickListener {
+            val sitios = Storage.getSitios()
+            if(sitios.isEmpty()){
+                Toast.makeText(requireContext(), "Primero registra un sitio", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             Toast.makeText(requireContext(), "Ir al formulario", Toast.LENGTH_SHORT).show()
         }
 
