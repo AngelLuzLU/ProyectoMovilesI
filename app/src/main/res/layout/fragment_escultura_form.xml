@@ -200,19 +200,31 @@
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/botonRegistrarEscultura"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCorrienteEscultura"
-        app:layout_constraintVertical_bias="0.206" />
+        app:layout_constraintVertical_bias="0.295" />
 
     <Button
         android:id="@+id/botonRegistrarEscultura"
-        android:layout_width="120dp"
-        android:layout_height="45dp"
+        android:layout_width="141dp"
+        android:layout_height="48dp"
         android:text="Registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCorrienteEscultura"
-        app:layout_constraintVertical_bias="0.806" />
+        app:layout_constraintVertical_bias="0.66" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sitio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
 </androidx.constraintlayout.widget.ConstraintLayout>
