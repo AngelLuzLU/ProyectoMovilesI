@@ -34,7 +34,7 @@ class FormularioArticulo : AppCompatActivity() {
         // Preselección en "Fosil"
         spinner.setSelection(adapter.getPosition("Fosil"))
         val tipo = intent.getIntExtra("tipo", 1100)
-        if(tipo == 1100){
+        if (tipo == 1100) {
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parentView: AdapterView<*>?, selectedItemView: View?,
@@ -48,35 +48,39 @@ class FormularioArticulo : AppCompatActivity() {
                     }
                 }
 
-                override fun onNothingSelected(parentView: AdapterView<*>?) {
-                    // No hacer nada
-                }
+                override fun onNothingSelected(parentView: AdapterView<*>?) {}
+
             }
         }
 
 
-        if(tipo != 1100){
-            spinner.isEnabled = false
-            when (tipo) {
-                0 -> {
-                    replaceFragment(FosilFormFragment(Fosil(intent)))
-                    spinner.setSelection(adapter.getPosition("Fosil"))
-                }
-                1 -> {
-                    replaceFragment(EsculturaFormFragment(Escultura(intent)))
-                    spinner.setSelection(adapter.getPosition("Escultura"))
-                }
-                2 ->{
-                    replaceFragment(PinturaFormFragment(Pintura(intent)))
-                    spinner.setSelection(adapter.getPosition("Pintura"))
+            if (tipo != 1100) {
+                spinner.isEnabled = false
+                when (tipo) {
+                    0 -> {
+                        replaceFragment(FosilFormFragment(Fosil(intent)))
+                        spinner.setSelection(adapter.getPosition("Fosil"))
+                    }
+
+                    1 -> {
+                        replaceFragment(EsculturaFormFragment(Escultura(intent)))
+                        spinner.setSelection(adapter.getPosition("Escultura"))
+                    }
+
+                    2 -> {
+                        replaceFragment(PinturaFormFragment(Pintura(intent)))
+                        spinner.setSelection(adapter.getPosition("Pintura"))
+                    }
                 }
             }
+
+
+
         }
-    }
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()
     }
-}
+    }

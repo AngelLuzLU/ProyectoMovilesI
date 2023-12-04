@@ -88,6 +88,9 @@ class EsculturaFormFragment(var escultura: Escultura?) : Fragment() {
             tfAncho.setText(escultura?.ancho.toString())
             tfAutor.setText(escultura?.autor)
             tfCorrienteArtistica.setText(escultura?.corrienteArtistica)
+            val f = Storage.getEsculturas().find { e -> e.id == escultura?.id }
+            val sitioInicial: Sitio = sitios.find { e -> e.articulos?.contains(f as Articulo) ?: false }!!
+            spinnerSitio.setSelection(adapter.getPosition(sitioInicial.nombre))
         }
         button.setOnClickListener {
             val nombre = tfNombre.text.toString()

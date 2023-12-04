@@ -1,6 +1,7 @@
 package com.example.proyectomovilesi.models
 
 import android.content.Intent
+import com.example.proyectomovilesi.Storage
 import java.io.Serializable
 
 class Fosil(
@@ -29,6 +30,19 @@ class Fosil(
         intent.getStringExtra("ubicacionDescubrimiento") ?: "",
         intent.getStringExtra("tipoFosil") ?: "",
         intent.getStringExtra("cuidadosEspeciales") ?: ""
+    )
+    constructor(nombre: String, anio: String, descripcion: String, periodo: String, tipoFosil: String, especie: String, ubicacionDescubrimiento: String, cuidadosEspeciales: String, creadoPor: Usuario, actualizadoPor: Usuario) : this(
+        Storage.getFosiles().count() + 1,
+        anio,
+        nombre,
+        creadoPor,
+        actualizadoPor,
+        descripcion,
+        especie,
+        periodo,
+        ubicacionDescubrimiento,
+        tipoFosil,
+        cuidadosEspeciales
     )
 
     override fun putToIntent(intent: Intent) {
