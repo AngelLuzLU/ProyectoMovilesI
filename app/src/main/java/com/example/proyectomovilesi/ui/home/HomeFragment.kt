@@ -110,7 +110,6 @@ class HomeFragment : Fragment() {
                 return@setOnClickListener
             }
             startActivity(Intent(requireContext(), FormularioArticulo::class.java))
-            Toast.makeText(requireContext(), "Ir al formulario", Toast.LENGTH_SHORT).show()
         }
 
         return root

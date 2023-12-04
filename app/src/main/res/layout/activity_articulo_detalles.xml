@@ -76,6 +76,13 @@
         </LinearLayout>
     </LinearLayout>
     <TextView
+        android:id="@+id/txtSitioDetallesArticulo"
+        style="@style/primaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="" />
+    <TextView
         android:id="@+id/txtAtrr1"
         style="@style/primaryText"
         android:layout_width="match_parent"

@@ -26,7 +26,7 @@ class SitioAdapter(private val context: Context, private val sitios: List<Sitio>
     override fun onBindViewHolder(holder: SitioViewHolder, position: Int) {
         val sitio = sitios[position]
         var images = listOf(R.drawable.ex_paint, R.drawable.ex_sculp, R.drawable.dinosaur)
-        var imgId = 0
+        var imgId = R.drawable.dinosaur
         if(sitio.articulos != null && sitio.articulos!!.isNotEmpty()){
             val first = sitio.articulos!!.first()
             if(first is Fosil) imgId = R.drawable.dinosaur

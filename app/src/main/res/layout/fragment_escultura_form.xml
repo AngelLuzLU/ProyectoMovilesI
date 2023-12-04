@@ -7,11 +7,11 @@
 
 
     <EditText
-        android:id="@+id/editTextDescripcionPintura"
+        android:id="@+id/editTextDescripcionEscultura"
         style="@style/textField"
         android:layout_width="323dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="116dp"
         android:ems="10"
         android:hint="Descripción"
         android:inputType="text"
@@ -20,52 +20,47 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="cm"
-        app:layout_constraintEnd_toStartOf="@+id/editTextAnchuraEscultura2"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toEndOf="@+id/editTextAlturaEscultura"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCorrientePintura" />
-
-    <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="28dp"
         android:text="cm"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAutorEscultura"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCorrientePintura" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMaterialEscultura" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:layout_marginBottom="29dp"
         android:text="Kg"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAutorEscultura"
         app:layout_constraintEnd_toStartOf="@+id/editTextAlturaEscultura"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toEndOf="@+id/editTextPesoEscultura"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCorrientePintura" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMaterialEscultura" />
 
     <EditText
         android:id="@+id/editTextAlturaEscultura"
         style="@style/textField"
-        android:layout_width="83dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="232dp"
+        android:layout_width="87dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="23dp"
         android:ems="10"
         android:hint="Altura"
         android:inputType="text"
         android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextAnioPintura"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAutorEscultura"
+        app:layout_constraintEnd_toStartOf="@+id/editTextAnioEscultura"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextIdPintura" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMaterialEscultura" />
 
     <EditText
         android:id="@+id/editTextAnchuraEscultura2"
@@ -80,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.823"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAnioPintura" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAnioEscultura" />
 
     <EditText
         android:id="@+id/editTextPesoEscultura"
@@ -88,43 +83,23 @@
         android:layout_width="59dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:hint="Peso"
         android:inputType="text"
         android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAutorEscultura"
         app:layout_constraintEnd_toStartOf="@+id/editTextAlturaEscultura"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCorrientePintura" />
-
-    <Button
-        android:id="@+id/botonRegistrar"
-        android:layout_width="120dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="88dp"
-        android:text="Registrar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/botonRegistrar3"
-        app:layout_constraintHorizontal_bias="0.72"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/botonRegistrar3"
-        android:layout_width="131dp"
-        android:layout_height="44dp"
-        android:layout_marginBottom="88dp"
-        android:text="Actualizar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.76"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMaterialEscultura" />
 
     <EditText
-        android:id="@+id/editTextUbicacionFosil"
+        android:id="@+id/editTextCorrienteEscultura"
         style="@style/textField"
         android:layout_width="323dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="416dp"
         android:ems="10"
         android:hint="Corriente Artisitica"
         android:inputType="text"
@@ -133,11 +108,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/editTextCorrientePintura"
+        android:id="@+id/editTextMaterialEscultura"
         style="@style/textField"
         android:layout_width="323dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="188dp"
         android:ems="10"
         android:hint="Material"
         android:inputType="text"
@@ -146,11 +121,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/editTextEspeciePintura"
+        android:id="@+id/editTextAutorEscultura"
         style="@style/textField"
         android:layout_width="323dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="384dp"
+        android:layout_marginTop="340dp"
         android:ems="10"
         android:hint="Autor"
         android:inputType="text"
@@ -158,46 +133,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="23dp"
+        android:text="cm"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAutorEscultura"
+        app:layout_constraintEnd_toStartOf="@+id/editTextAnchuraEscultura2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextAlturaEscultura"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMaterialEscultura" />
+
     <EditText
-        android:id="@+id/editTextNomPintura"
+        android:id="@+id/editTextNomEscultura"
         style="@style/textField"
         android:layout_width="132dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="text"
         android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextAnioPintura"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDescripcionEscultura"
+        app:layout_constraintEnd_toStartOf="@+id/editTextAnioEscultura"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextIdPintura" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/editTextAnioPintura"
+        android:id="@+id/editTextAnioEscultura"
         style="@style/textField"
         android:layout_width="132dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="Año"
         android:inputType="text"
         android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDescripcionEscultura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextIdPintura" />
-
-    <EditText
-        android:id="@+id/editTextIdPintura"
-        style="@style/textField"
-        android:layout_width="323dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="Identificador de la escultura"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -213,4 +192,27 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerSitioEsculturaForm"
+        android:layout_width="323dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/botonRegistrarEscultura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCorrienteEscultura"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <Button
+        android:id="@+id/botonRegistrarEscultura"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:text="Registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCorrienteEscultura"
+        app:layout_constraintVertical_bias="0.806" />
 </androidx.constraintlayout.widget.ConstraintLayout>

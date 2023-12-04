@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.proyectomovilesi.R
+import com.example.proyectomovilesi.models.Fosil
 
-class FosilFormFragment : Fragment() {
+class FosilFormFragment (var fosil: Fosil?) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

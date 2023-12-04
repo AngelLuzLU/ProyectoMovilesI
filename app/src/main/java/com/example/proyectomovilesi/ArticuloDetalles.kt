@@ -15,6 +15,7 @@ import com.example.proyectomovilesi.models.Articulo
 import com.example.proyectomovilesi.models.Escultura
 import com.example.proyectomovilesi.models.Fosil
 import com.example.proyectomovilesi.models.Pintura
+import com.example.proyectomovilesi.models.Sitio
 
 class ArticuloDetalles : AppCompatActivity() {
     private lateinit var txtNombre: TextView;
@@ -31,6 +32,7 @@ class ArticuloDetalles : AppCompatActivity() {
     private lateinit var txtAtrr4: TextView;
     private lateinit var txtAtrr5: TextView;
     private lateinit var txtAtrr6: TextView;
+    private lateinit var txtSitio: TextView;
     private lateinit var btnEditar: Button
     private lateinit var btnEliminar: ImageButton
     private lateinit var actionsRow: LinearLayout
@@ -54,6 +56,7 @@ class ArticuloDetalles : AppCompatActivity() {
         txtAtrr4 = findViewById(R.id.txtAtrr4)
         txtAtrr5 = findViewById(R.id.txtAtrr5)
         txtAtrr6 = findViewById(R.id.txtAtrr6)
+        txtSitio = findViewById(R.id.txtSitioDetallesArticulo)
         actionsRow = findViewById(R.id.articleActionsRow)
         val currentUser = Storage.getCurrentUser()
         if(currentUser?.rol != "Administrador") actionsRow.visibility = View.GONE
@@ -96,7 +99,7 @@ class ArticuloDetalles : AppCompatActivity() {
         }
 
         btnEditar.setOnClickListener {
-            val inte = Intent(this, MainActivity::class.java)
+            val inte = Intent(this, FormularioArticulo::class.java)
             if(art is Fosil){
                 val fosil: Fosil = art
                 fosil.putToIntent(inte)
@@ -133,11 +136,34 @@ class ArticuloDetalles : AppCompatActivity() {
         }
     }
     fun assignBaseValues(art: Articulo){
+
         txtNombre.text = "Nombre: ${art.nombre}"
         txtAnio.text = "Año: ${art.anio}"
         txtCreadoPor.text = "Creado Por: ${art.creadoPor.nombre}"
         txtActualizadoPor.text = "Actualizado Por: ${art.actualizadoPor.nombre}"
         txtId.text = "Id: ${art.id}"
         txtDesc.text = "Descripción: ${art.descripcion}"
+        if(art is Fosil){
+            val real = Storage.getFosiles().find{ e -> e.id == art.id}
+            val sitios = Storage.getSitios()
+            val sitio: Sitio? = sitios.find { e -> e.articulos?.contains(real as Articulo) ?: false }
+            txtSitio.text = "Sitio: n/a"
+            if(sitio != null) txtSitio.text = "Sitio: ${sitio.nombre}"
+        }
+        if(art is Escultura){
+            val real = Storage.getEsculturas().find{ e -> e.id == art.id}
+            val sitios = Storage.getSitios()
+            val sitio: Sitio? = sitios.find { e -> e.articulos?.contains(real as Articulo) ?: false }
+            txtSitio.text = "Sitio: n/a"
+            if(sitio != null) txtSitio.text = "Sitio: ${sitio.nombre}"
+        }
+        if(art is Pintura){
+            val real = Storage.getPinturas().find{ e -> e.id == art.id}
+            val sitios = Storage.getSitios()
+            val sitio: Sitio? = sitios.find { e -> e.articulos?.contains(real as Articulo) ?: false }
+            txtSitio.text = "Sitio: n/a"
+            if(sitio != null) txtSitio.text = "Sitio: ${sitio.nombre}"
+        }
+
     }
 }

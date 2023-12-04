@@ -47,6 +47,42 @@ class Storage private constructor(context: Context) {
             pinturas = pinturas ?: ArrayList()
             fosiles = fosiles ?: ArrayList()
             esculturas = esculturas ?: ArrayList()
+
+            /*if(sitios!!.isNotEmpty()){
+                for(sitio in sitios!!){
+                    if(sitio.articulos != null && sitio.articulos!!.isNotEmpty()){
+                        for(i in sitio.articulos!!.indices){
+                            val articulo = sitio.articulos!![i]
+                            if(articulo is Fosil){
+                                val fosil: Fosil = fosiles!!.find { e -> e.id == articulo.id }!!
+                                sitio.articulos!![i] = fosil
+                            }
+                            if(articulo is Escultura){
+                                val escultura: Escultura = esculturas!!.find { e -> e.id == articulo.id }!!
+                                sitio.articulos!![i] = escultura
+                            }
+                            if(articulo is Pintura){
+                                val pintura: Pintura = pinturas!!.find { e -> e.id == articulo.id }!!
+                                sitio.articulos!![i] = pintura
+                            }
+                        }
+                    }
+                }
+            }*/
+        }
+
+        fun cleanSharedPreferences(context: Context){
+            val prefs: SharedPreferences = context.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
+            val editor = prefs.edit()
+
+            editor.putString(KEY_USUARIOS, null)
+            editor.putString(KEY_SITIOS, null)
+            editor.putString(KEY_PINTURAS, null)
+            editor.putString(KEY_FOSILES, null)
+            editor.putString(KEY_ESCULTURAS, null)
+            editor.putString(KEY_CURRENTUSER, null)
+
+            editor.apply()
         }
 
         fun saveToSharedPreferences(context: Context) {

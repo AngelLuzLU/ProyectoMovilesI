@@ -42,7 +42,7 @@ class FormularioSitio : AppCompatActivity() {
             if (!actualizar){
                 Storage.getSitios().add(Sitio(nom, publi, expo))
                 Storage.saveToSharedPreferences(this)
-                finish()
+                startActivity(Intent(this, MainActivity::class.java))
                 return@setOnClickListener
             }
             val site = Storage.getSitios().find { e -> e.id == sitio.id }
